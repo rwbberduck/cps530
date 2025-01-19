@@ -1,0 +1,66 @@
+@font-face {font-family:Monocraft; src:url('Monocraft.ttf');}
+
+body {font-family:Monocraft; overflow:auto; margin:0; padding:0;
+		background-image:url('gray-wall-textures-background.jpg');}
+		
+main {min-height:100vh; margin-bottom:-100px}
+
+.border {border:2px solid #000000; box-sizing:content-box;}
+.whBackground {background-color:white}
+.center {text-align:center;}
+#12font {font-size:12px}
+#left {float:left;}
+#right {float:right;}
+
+header {background-color:#0083ff;height:100px; padding-bottom:5px}
+h1 {margin-top:0; padding-top:10px;}
+
+nav {height:40px; padding-top:15px; margin-bottom:20px;}
+
+div {margin:10px;}
+.videogames {display:none; margin:0px;}
+
+aside {float:right; width:30%; height:auto;}
+#aTable {margin-left:auto; margin-left:auto; padding:5px 5px 5px 5px}
+th {padding:5px 15px 5px 5px;}
+
+p.games:hover + .videogames {display:inline;}
+#0margin {margin:0px;}
+p.games {text-decoration:underline; margin:0px; padding:0px}
+
+section {padding:0 10px 0 10px; min-height:240px; width:60%;}
+
+article {margin:10px 0 10px 0; padding:10px 10px 10px 10px; width:60%;}
+
+footer, .push {height:100px;}
+
+section p {font-family:serif;}
+
+a:visited {color:red}
+a:active {color:orange}
+a:hover {color:yellow; opacity:0.5;}
+
+.first::first-line {color:#ff0000; font-weight:bold;}
+
+.animation {height:100px; width:100px; background-color:orange;
+			animation-name:stretch; animation-duration:1.5s; animation-timing-function: ease-out; 
+			animation-delay: 0; animation-direction: alternate;
+			animation-iteration-count: infinite; animation-play-state: running;}
+			
+ @keyframes stretch { 
+					0% {
+						transform:scale(.5);
+						background-color:#341085;
+						border-radius:100%;
+					}
+					50% {
+						transform:scale(.7);
+						background-color:#ff7a00;
+						border-radius:100%;
+					}
+					100% {
+						transform:scale(.2);
+						background-color:#ff0202;
+						border-radius:100%;
+					}
+	}
