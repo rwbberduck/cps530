@@ -1,0 +1,56 @@
+@font-face {font-family:Monocraft; src:url('Monocraft.ttf');}
+@font-face {font-family:Roboto; src:url('Roboto-Regular.ttf');}
+@font-face {font-family:Inter; src:url('Inter-VariableFont_opsz,wght.ttf');}
+
+body {font-family:Roboto; background-color:#92a8d1;}
+
+*{box-sizing:border-box;}
+
+[class*="col-"] {float:left; padding:10px; width:100%}
+
+.row::after {content:""; clear:both; display:table;}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+	/*Tablet*/		
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+	body {color:#8b8b8b; font-family:Inter}
+}
+
+@media only screen and (min-width: 1024px) {
+	/* Desktop */
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+	body {color:#40287a; font-size:1.5vw; font-family:Monocraft}
+}
+
+.center {text-align:center;}
+.border {border:1px solid #000000;}
+.white {background-color:white;}
+
+img {max-width:100%; height:auto;}
+
+#aTable {padding:5px 5px 5px 5px}
+th {padding:5px 15px 5px 5px;}
+
+h6 {margin:0; padding:3px;}
