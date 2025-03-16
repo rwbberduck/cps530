@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CPS393 Lab 4</title>
+<meta charset="utf-8">
+<link rel="icon" type="image/x-icon" href="smiley.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div>
+<h3>Problem 1</h3>
+<h5>List of Bookmarks</h5>
+<p id="0"><i id="0i" class="fa"></i>&nbsp;</p>
+<p id="1"><i id="1i" class="fa"></i>&nbsp;</p>
+<p id="2"><i id="2i" class="fa"></i>&nbsp;</p>
+<p id="3"><i id="3i" class="fa"></i>&nbsp;</p>
+<script>
+	websites = ["http://neverssl.com","https://www.vlr.gg/","https://dpm.lol/","http://captive.apple.com/"];
+	output = "";
+	function secure(websites) {
+		for (let i=0; i < websites.length; i++){
+			const element = document.getElementById(i);
+			const icon = document.getElementById(i + "i");
+			website = websites[i]
+			if (websites[i].substring(0,5) == "https"){
+				icon.classList.add("fa-lock");
+				icon.style.color = "#04ff00";
+				element.innerHTML += website;
+			}
+			else {
+				icon.classList.add("fa-unlock");
+				icon.style.color = "#ff0000";
+				element.innerHTML += website;
+			}
+		}
+	}
+	secure(websites);
+</script>
+</div>
+
+<div>
+<h3>Problem 2</h3>
+<p id="p1">Drab as a fool, aloof as a bard.</p>
+<p id="p2">It ain't over till it's over</p>
+<p id="p3">radar</p>
+<p id="p4">When you come to a fork in the road, take it</p>
+<p id="p5">Marge lets Norah see Sharon’s telegram.</p>
+
+<script>
+	function fixText(text) {
+		
+		inputValue1 = text.replace(/ /g, "");
+		inputValue2 = text.replace(/\W|_/g, "");
+		inputValue3 = inputValue2.toLowerCase();
+		return inputValue3;
+	}
+	function isPalindrome(){
+		for (let a=1; a < 6; a++) {
+			const element = document.getElementById("p" + a);
+			text1 = element.textContent;
+			text = fixText(text1);
+			let palindrome = false;
+			for (let i=0; i < (text.length / 2); i++) {
+				if (text.charAt(i) == text.charAt((text.length-1)-i)){
+					palindrome = true;
+				}
+				else {
+					palindrome = false;
+					break;
+				}
+			
+			}
+			if (palindrome){
+				element.innerHTML = "String is a palindrome: " + text1;
+				element.style.color = "#04ff00";
+			}
+		
+			else {
+				element.innerHTML = "String is not a palindrome: " + text1;
+				element.style.color = "#ff0000";
+			}
+		}
+	}
+	isPalindrome();
+</script>
+
+</div>
+
+</body>
+
+</html>
