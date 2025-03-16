@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CPS393 Lab 5</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="stylesheet.css">
+<script src="lab05.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js"></script> 
+</head>
+
+<body>
+<div>
+<h3>Problem 1</h3>
+<form>
+	<label for="name">Name: </label><br>
+	<input type="text" id="name" name="name"><br>
+	<label for="address">Address: </label><br>
+	<input type="text" id="address" name="address"><br>
+	<label for="phonenum">Phone number &#40;area code&#41; xxx-xxxx: </label><br>
+	<input type="text" id="phonenum" name="phonenum"><br>
+	<input type="button" onclick="displayUser(document.getElementById('name'), document.getElementById('address'), document.getElementById('phonenum'));" 
+		value="Submit">
+</form onSubmit="return formValidator()">
+</div>
+<div id = "prob1Ans" style="padding: 5px; margin-top: 10px;">
+<p id="user0"></p>
+<p id="user1"></p>
+<p id="user2"></p>
+</div>
+
+<div class="row">
+<h3>Problem 2</h3>
+<div class="col-5">
+	<label for="words">Enter anything:</label><br>
+	<textarea id="words" placeholder="Enter anything here" rows="5" cols="35"></textarea>
+</div>
+<div class="col-7">
+	<p style="font-size: 20px; color: red;">Number of characters: <span id="char">0</span><br>
+	Number of letters: <span id="letters">0</span></p>
+<script>
+let words = document.getElementById("words");
+let char = document.getElementById('char');
+let letters = document.getElementById('letters');
+
+words.addEventListener('input', function() {
+	// count characters
+	let chars = this.value;
+	char.textContent = chars.length;
+
+	// count letters
+	let count = 0;
+	for (let i=0; i< (chars.length); i++) {
+		if (chars.charAt(i).match(/^[a-zA-Z]*$/)) {
+			count++;
+		}
+	}
+	letters.textContent = count;
+
+});
+</script>
+</div>
+</div>
+
+<div>
+<h3>Problem 3</h3>
+<p>Click me!</p>
+<div class="image1">
+<img id="piggy" src="PIGGY.png" alt="Bad Piggy from Angry Birds" style="width: 500px; height: 500px;">
+<i class="material-icons" style="opacity: 0;">close</i>
+<script>
+	$(".image1 img").click(function(event){
+		$(this).animate({
+			height: '100vh',
+			width: '100%',
+			duration: '1600'
+		})
+		$(".image1 i").css("opacity", "1")
+	});
+
+	$("i").click(function(event){
+		$(".image1 img").animate({
+			height: '500px',
+			width: '500px',
+			duration: '800'
+		})
+		$(".image1 i").css("opacity", "0")
+	});
+	
+</script>
+</div>
+</div>
+
+</body>
+</html>
